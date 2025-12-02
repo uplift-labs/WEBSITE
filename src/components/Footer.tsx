@@ -1,28 +1,19 @@
 import React from 'react';
+import Link from 'next/link';
 import { Logo } from './Icons';
 import { APP_CONTENT } from '@/src/services/dataService';
 import { FadeIn } from './Animators';
 
-interface FooterProps {
-  onNavigate: (page: any) => void;
-}
-
-const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+const Footer: React.FC = () => {
   const data = APP_CONTENT.footer;
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, action: string | undefined, url: string | undefined) => {
-    if (action) {
-        e.preventDefault();
-        if (action.startsWith('scroll:')) {
-            onNavigate('home');
-            setTimeout(() => {
-                const element = document.getElementById(action.split(':')[1]);
-                if (element) element.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        } else {
-            onNavigate(action);
-        }
-    }
+  const getLinkHref = (link: any): string => {
+    if (link.url) return link.url;
+    if (link.action === 'contact') return '/contact';
+    if (link.action === 'terms') return '/terms';
+    if (link.action === 'privacy') return '/privacy';
+    if (link.action === 'product') return '/product';
+    return '/';
   };
 
   return (
@@ -51,7 +42,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 
                 <div className="lg:col-span-6 flex flex-col justify-end">
                 <div className="mt-auto">
-                    <Logo className="w-16 h-16 md:w-20 md:h-20 text-white cursor-pointer hover:text-primary transition-colors duration-300" />
+                    <Link href="/" className="inline-block hover:opacity-80 transition-opacity">
+                      <Logo className="w-16 h-16 md:w-20 md:h-20" />
+                    </Link>
                 </div>
                 </div>
 
@@ -60,21 +53,21 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <div className="flex flex-col space-y-4">
                     <h4 className="text-white font-medium text-xl mb-2">{data.sections.resources.title}</h4>
                     {data.sections.resources.links.map((link, i) => (
-                        <a key={i} href={link.url || '#'} onClick={(e) => handleLinkClick(e, link.action, link.url)} className="text-gray-500 hover:text-white transition-colors text-lg">{link.label}</a>
+                        <Link key={i} href={getLinkHref(link)} target={link.url ? "_blank" : undefined} className="text-gray-500 hover:text-white transition-colors text-lg">{link.label}</Link>
                     ))}
                 </div>
 
                 <div className="flex flex-col space-y-4">
                     <h4 className="text-white font-medium text-xl mb-2">{data.sections.company.title}</h4>
                     {data.sections.company.links.map((link, i) => (
-                        <a key={i} href={link.url || '#'} onClick={(e) => handleLinkClick(e, link.action, link.url)} className="text-gray-500 hover:text-white transition-colors text-lg">{link.label}</a>
+                        <Link key={i} href={getLinkHref(link)} target={link.url ? "_blank" : undefined} className="text-gray-500 hover:text-white transition-colors text-lg">{link.label}</Link>
                     ))}
                 </div>
 
                 <div className="flex flex-col space-y-4">
                     <h4 className="text-white font-medium text-xl mb-2">{data.sections.legal.title}</h4>
                     {data.sections.legal.links.map((link, i) => (
-                        <a key={i} href={link.url || '#'} onClick={(e) => handleLinkClick(e, link.action, link.url)} className="text-gray-500 hover:text-white transition-colors text-lg">{link.label}</a>
+                        <Link key={i} href={getLinkHref(link)} target={link.url ? "_blank" : undefined} className="text-gray-500 hover:text-white transition-colors text-lg">{link.label}</Link>
                     ))}
                 </div>
 

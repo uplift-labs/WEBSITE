@@ -33,13 +33,11 @@ const DownloadWidget: React.FC<DownloadWidgetProps> = ({ data }) => {
 
       {/* Main Download Button Container */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <button 
-          className="group relative overflow-hidden bg-white text-black font-bold text-sm md:text-base py-4 px-8 rounded-sm w-full sm:w-auto min-w-[240px] flex items-center justify-center space-x-3 hover:bg-gray-200 transition-all active:scale-95"
-          onClick={() => window.location.href = currentDownload.url}
+        <div 
+          className="group relative overflow-hidden bg-primary/20 border border-primary text-primary font-bold text-sm md:text-base py-4 px-8 rounded-sm w-full sm:w-auto min-w-[240px] flex items-center justify-center space-x-3"
         >
-          <DownloadIcon className="w-5 h-5 transition-transform group-hover:-translate-y-0.5" />
-          <span>{currentDownload.label}</span>
-        </button>
+          <span>Coming Soon</span>
+        </div>
 
         <div className="flex flex-col justify-center">
             <span className="text-gray-300 text-sm font-mono">{currentDownload.version}</span>

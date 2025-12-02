@@ -6,27 +6,15 @@ const config: Config = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    colors: {
+      background: '#050505',
+      primary: '#FF5500',
+      muted: '#888888',
+      white: '#ffffff',
+      black: '#000000',
+      transparent: 'transparent',
+    },
     extend: {
-      colors: {
-        background: '#050505',
-        primary: '#FF5500',
-        muted: '#888888',
-      },
-      textColor: {
-        background: '#050505',
-        primary: '#FF5500',
-        muted: '#888888',
-      },
-      backgroundColor: {
-        background: '#050505',
-        primary: '#FF5500',
-        muted: '#888888',
-      },
-      borderColor: {
-        background: '#050505',
-        primary: '#FF5500',
-        muted: '#888888',
-      },
       fontFamily: {
         sans: [
           'SF Pro Display',

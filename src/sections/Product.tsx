@@ -4,11 +4,7 @@ import { APP_CONTENT } from '@/src/services/dataService';
 import { SandboxVisual, StoreVisual, RuntimeVisual, TokenVisual, PermissionsVisual } from '@/src/components/ProductVisuals';
 import { FadeIn, ScrambleText } from '@/src/components/Animators';
 
-interface ProductProps {
-  onNavigate: (page: any) => void;
-}
-
-const Product: React.FC<ProductProps> = ({ onNavigate }) => {
+const Product: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [animStep, setAnimStep] = useState(0);
@@ -192,13 +188,13 @@ const Product: React.FC<ProductProps> = ({ onNavigate }) => {
                           <p className="text-base md:text-lg text-gray-300 leading-relaxed mb-6 md:mb-8">
                             {features[activeIndex].description}
                           </p>
-                          <button 
-                            onClick={() => onNavigate('product')}
+                          <a 
+                            href="/product"
                             className="bg-white text-black px-6 py-3 rounded-sm text-xs font-bold tracking-widest uppercase transition-all hover:bg-gray-200 flex items-center w-fit group"
                           >
                             <span>Explore</span>
                             <ChevronRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                          </button>
+                          </a>
                         </div>
                     </div>
                 </TechBorderContainer>
@@ -273,13 +269,13 @@ const Product: React.FC<ProductProps> = ({ onNavigate }) => {
                                 
                                 {/* Mobile Explore Button on last item */}
                                 {index === features.length - 1 && (
-                                    <button 
-                                    onClick={() => onNavigate('product')}
+                                    <a 
+                                    href="/product"
                                     className="mt-6 bg-white text-black px-6 py-3 rounded-sm text-xs font-bold tracking-widest uppercase transition-all hover:bg-gray-200 flex items-center w-fit group"
                                 >
                                     <span>Explore</span>
                                     <ChevronRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
-                                </button>
+                                </a>
                                 )}
                             </div>
                         </TechBorderContainer>
