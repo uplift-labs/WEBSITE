@@ -4,7 +4,7 @@ export const APP_CONTENT: AppData = {
   hero: {
     visionTag: "VISION",
     headline: "Install. Plug. Run.",
-    subhead: "Run your AI Agents in a secured Enviornment and connect them with your Agentic Vault",
+    subhead: "Run your AI Agents in a secured Environment and connect them with your Agentic Vault",
     description: "Download an open-source platform where locally-run agents collaborate through shared context with unlimited personal memory.",
     downloads: {
       windows: {
@@ -18,7 +18,7 @@ export const APP_CONTENT: AppData = {
   },
   product: {
     tag: "PRODUCT",
-    headline: "Self-Contained AI Enviornment",
+    headline: "Self-Contained AI Environment",
     subhead: "A new compute layer with containerized agents, user controlled data and a marketplace for agents",
     features: [
       {

@@ -5,6 +5,7 @@
   :root {
     --background: #050505;
     --primary: #FF5500;
+    --primary-muted: rgba(255, 85, 0, 0.5);
     --muted: #888888;
   }
 
