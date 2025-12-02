@@ -6,6 +6,8 @@ export const APP_CONTENT: AppData = {
     headline: "Install. Plug. Run.",
     subhead: "Run your AI Agents in a secured Environment and connect them with your Agentic Vault",
     description: "Download an open-source platform where locally-run agents collaborate through shared context with unlimited personal memory.",
+    contractAddress: "6zn51qJZs4P5MG1Miq79KH8mFEpi9yV232SHKz8zBAGS",
+    contractLabel: "$UPLIFT: Internal currency for computation",
     downloads: {
       windows: {
         id: "windows",

@@ -18,6 +18,8 @@ export interface HeroData {
   headline: string;
   subhead: string;
   description: string;
+  contractAddress: string;
+  contractLabel: string;
   downloads: {
     macos?: DownloadOption;
     windows: DownloadOption;

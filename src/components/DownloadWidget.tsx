@@ -34,7 +34,7 @@ const DownloadWidget: React.FC<DownloadWidgetProps> = ({ data }) => {
       {/* Main Download Button Container */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <div 
-          className="group relative overflow-hidden bg-primary/20 border border-primary text-primary font-bold text-sm md:text-base py-4 px-8 rounded-sm w-full sm:w-auto min-w-[240px] flex items-center justify-center space-x-3"
+          className="group relative overflow-hidden bg-white text-black text-sm md:text-base py-4 px-8 rounded-sm w-full sm:w-auto min-w-[240px] flex items-center justify-center space-x-3"
         >
           <span>Coming Soon</span>
         </div>
