@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { HeroData } from '@/lib/types';
-import { DownloadIcon, AppleIcon, WindowsIcon, LinuxIcon } from './Icons';
+import { DownloadIcon, AppleIcon, WindowsIcon, LinuxIcon, MailIcon } from './Icons';
 
 interface DownloadWidgetProps {
   data: HeroData;
@@ -109,9 +109,21 @@ const DownloadWidget: React.FC<DownloadWidgetProps> = ({ data }) => {
 
             {/* Content */}
             <div className="relative mb-10">
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed">
+              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
                 This is an MVP version. Users might face some bugs. Please cooperate and show us support.
               </p>
+              <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                <MailIcon className="w-5 h-5 text-primary flex-shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-gray-400 text-sm mb-1">Contact us for support:</span>
+                  <a 
+                    href="mailto:support@operatoruplift.com" 
+                    className="text-primary hover:text-primary/80 transition-colors duration-300 text-base font-medium"
+                  >
+                    support@operatoruplift.com
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Buttons */}
